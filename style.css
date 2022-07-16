@@ -44,23 +44,13 @@ header{
  
     position: relative;
     left: 0;
-    top: -200px;
+    top: -250px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 
 
  } 
 
-.container .caption{
- 
-    position: relative;
-    left: 0px;
-    bottom: 100px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
 
-
-   
-
- } 
 
   .container .caption a{
 border: 2px solid  rgb(48, 197, 48);
