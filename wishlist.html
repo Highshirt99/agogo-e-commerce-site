@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/ebb1ffe809.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+    <title>Contact</title>
+
+ 
+<script defer src="script.js"></script>
+
+
+      
+</head>
+
+<body>
+    <header >
+
+        <div class="header" style=" display: flex; justify-content: space-between; margin-top: 10px;"  >
+
+    <i class="fa fa-bars"onclick = "displayMenu()" id ="bar" style="margin-left: 5px ; color: grey; margin-top: 10px;"></i>
+    <img src="AGOGO/logo.png" width = 80px alt="">
+
+    <div style="margin-right: 15px ; margin-top: 5px;">
+        
+ 
+            <button class="btn btn-primary"><i class="fa fa-shopping-basket" onclick="showCart()"></i>
+
+            <span class="badge badge-light" style="display: none; font-size: 9px; " id="count">0</span>
+        </button>
+  
+    <i class="fa fa-heart-o" onclick="showSlides()" style="width: 10px; color: grey;"favorite></i>
+</div>
+</div>
+
+
+</header>
+
+
+<div id = "menu" class="menu">
+
+    <div class="menu-content">
+    <span onclick="closeMenu()">&times;</span>
+<div class="df df1">
+    <input id = "search" type="text" placeholder="Search..." oninput="filterInput()">
+    <i class="fa fa-search"></i>
+ 
+
+</div>
+<hr>
+
+<div class="menu-items">
+<ul id="mylist">
+
+    <li> <a href="index.html">HOME</a></li>
+<hr>
+    <div class="df">
+        <li> <a href="#">SHOP</a> </li>
+        <i class = "fa fa-angle-right"></i>
+    
+</div>
+<hr>
+    <li><a href="about.html">ABOUT US</a></li>
+<hr>
+    <li><a href="contact.html" >CONTACT US</a></li>
+    <hr>
+    <li><a href="wishlist.html">WISHLIST</a></li>
+    <hr>
+    
+   
+
+    <li><a href="#">FAQS</a>  </li>
+    <hr>
+
+
+</ul>
+<br>
+<div class="socials">
+<i class="fa fa-facebook"></i>
+<i class="fa fa-instagram"></i>
+<i class="fa fa-twitter"></i>
+</div>
+<hr>
+
+</div>
+</div>
+    </div>
+
+
+    <div id="cart" class="cart">
+   
+     <span id="close" onclick="closeCart()">&times;</span>
+     <div class="content2">
+        <h3  >CART</h3>
+
+
+        <p id="cartProducts">No products in the cart.</p>
+
+    </div>
+    </div>
+
+<div id="fav">
+
+</div>
+
+
+<footer>
+    <div class="sp">
+        <h5>SUPPORT</h5>
+        <ul class="list-group">
+            <li class="list-group-item"  style="background-color: grey">Privacy Policy</li>
+            <li class="list-group-item"  style="background-color: grey">About Us</li>
+            <li class="list-group-item"  style="background-color: grey">Contact Us</li>
+            <li class="list-group-item"  style="background-color: grey">Terms & Conditions</li>
+        </ul>
+
+
+
+
+        <h5>PRODUCTS</h5>
+        <ul class="list-group ">
+            
+            <li class="list-group-item df"  style="background-color: grey"><img src="AGOGO/agogongr_1622776191184_0.jpg" alt="" width="50px">
+                <p>FRANCK MEN WATCH <br>    
+                    
+              <p> <del> ₦58,000.00  </del> <strong>₦57,800.00 </strong></p>
+                </p>
+        
+
+        </li>
+
+
+        <li class="list-group-item df"  style="background-color: grey"><img src="AGOGO/AP.png" alt="" width="50px">
+            <p>AUDEMARS PIGUET <br>
+                
+           <p><del> ₦58,000.00  </del><strong>₦57,800.00 </strong></p>
+
+        </p>
+    </li>
+
+    <li class="list-group-item df"  style="background-color: grey"><img src="AGOGO/GUCCI (4).jpg" alt="" width="50px">
+        <p>GUCCI <br>
+            
+       <p><del> ₦45,000.00  </del><strong>₦43,550.00 </strong></p>
+
+    </p>
+</li>
+
+<li class="list-group-item df"  style="background-color: grey"><img src="AGOGO/GUCCI (6).jpg" alt="" width="50px">
+    <p>GUCCI<br>
+        
+   <p><del> ₦58,000.00  </del><strong>₦43,550.00 </strong></p>
+
+</p>
+</li>
+        </ul>
+    </h5>
+
+
+    </div>
+
+    <div class="pages">
+
+        <h5>PAGES</h5>
+        <ul class="list-group">
+
+            <li  class="list-group-item" style="background-color: grey"> <a href="index.html">HOME</a></li>
+ 
+                <li  class="list-group-item"  style="background-color: grey"> <a href="#">SHOP</a> </li>
+          
+            
+    
+  
+            <li class="list-group-item"  style="background-color: grey"><a href="about.html">ABOUT US</a></li>
+
+            <li  class="list-group-item"  style="background-color: grey"><a href="contact.html">CONTACT US</a></li>
+  
+            <li  class="list-group-item"  style="background-color: grey"><a href="wishlist.html">WISHLIST</a></li>
+           
+            
+           
+        
+            <li  class="list-group-item"  style="background-color: grey" ><a href="#">FAQS</a>  </li>
+  
+        
+        
+        </ul>
+    </div>
+
+
+    <div class="copyright text-center">
+       <p> Developed by Aishat Akinyemi.</p>
+        <p>Copyright &copy; 2022. </p>
+    </div>
+</footer>
+
+
+
+</body>
+
+</html>

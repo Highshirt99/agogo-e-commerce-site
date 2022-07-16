@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agogo</title>
+    <script src="https://kit.fontawesome.com/ebb1ffe809.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    
+
+</head>
+<body>
+
+    <header>
+
+        <div class="header" style="display: flex; justify-content: space-between; margin-top: 10px;"  >
+
+    <i  class="fa fa-bars" onclick = "displayMenu()" id ="bar" style="margin-left: 5px ; color: grey; margin-top: 10px;"></i>
+    <img src="AGOGO/logo.png" width = 60px alt="">
+
+    <div style="margin-right: 15px ; margin-top: 5px;">
+        
+ 
+    <i style="background-color: rgb(29, 48, 106) ; color: white; padding: 4px; font-size: 8px; border-radius: 3px; padding: 4px; " class="fa fa-shopping-basket" onclick="showCart()">   <span style="display:none ;" id="count">0</span></i>
+
+  
+   
+
+    <i class="fa fa-heart-o"  onclick = "showWishlist()"style="width: 10px; color: grey;"favorite></i>
+</div>
+</div>
+
+
+</header>
+
+
+
+
+
+
+<div  class="container fades" >
+
+
+    <img src="AGOGO/VERSACE a (1).jpg" width = "100%" alt="">
+
+
+</div>
+
+<div class="container fades">
+    <img src="AGOGO/JC.png" alt="" width="100%">
+
+    <div class="caption">
+    <h1>TOURBILON.</h1>
+    <p>The best brands are available.</p>
+    <a href="#"><i class ="fa fa-shopping-cart"> </i> SHOP NOW!</a>
+</div> 
+
+ </div>
+
+<div class="container fades">
+
+    <img src="AGOGO/HERMES (2).png" width ="100%" alt="">
+
+    <div class="caption">
+    <h1>TRENDING <br> Watch</h1>
+    <p>Because style is timeless.</p>
+    <a href="#">SHOP NOW!<i class="fa fa-shopping-cart"> </i></a>
+</div>
+
+</div>
+
+
+
+
+ <div class="text-center">
+<span class="dots" onclick="currentSlide(1)"></span>
+<span class="dots" onclick="currentSlide(2)"></span>
+<span class="dots" onclick="currentSlide(3)"></span>
+
+ </div>
+
+
+
+
+
+
+<div id = "menu" class="menu">
+
+    <div class="menu-content">
+    <span onclick="closeMenu()">&times;</span>
+<div class="df df1">
+    <input id = "search" type="text" placeholder="Search..." oninput="filterInput()">
+    <i class="fa fa-search"></i>
+ 
+
+</div>
+<hr>
+
+<div class="menu-items">
+<ul id="mylist">
+
+    <li> <a href="index.html">HOME</a></li>
+<hr>
+    <div class="df"  onclick="displayOptions()">
+        <li> <a href="#">SHOP</a> </li>
+        <i class = "fa fa-angle-right">
+        </i>
+    </div>
+        <div id="opt" style="display: none; padding: 3px;" >
+            <a  href=""> GUCCI</a>
+          <a href=""> VERSACE</a>
+      <a href=""> HUBLOT</a>
+           <a href=""> FRANCK MULLER</a>
+        <a href=""> BVL GARI</a>
+        </div>
+    
+
+<hr>
+    <li><a href="about.html">ABOUT US</a></li>
+<hr>
+    <li><a href="contact.html">CONTACT US</a></li>
+    <hr>
+    <li><a href="#" onclick = "showWishlist()">WISHLIST</a></li>
+    <hr>
+    
+   
+
+    <li><a href="#">FAQS</a>  </li>
+    <hr>
+
+
+</ul>
+<br>
+<div class="socials">
+<i class="fa fa-facebook"></i>
+<i class="fa fa-instagram"></i>
+<i class="fa fa-twitter"></i>
+</div>
+<hr>
+
+</div>
+</div>
+    </div>
+
+
+    <div id="cart" class="cart">
+   
+     <span id="close" onclick="closeCart()">&times;</span>
+     <div class="content2">
+        <h3  >CART</h3>
+
+
+        <p id="cartProducts">No products in the cart.</p>
+
+    </div>
+
+    
+
+
+    <div class="itemsAdded">
+
+    
+        <ul id="itemDetails"style="list-style-type: none;">
+
+
+        <li id="lI" class="list"  >
+
+         <div class="items"   style=" display: flex;  flex-wrap: wrap; justify-content: space-between; position: relative; right: 18px;">
+        <div>
+        <img id="img" class= "imgg" src="" alt="">
+        <p id="info" style="color: blue; font-size: 10px;"> </p>
+      
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+    <p id="price" style="display: none; font-size: 16px;" class="priceee">₦ </p>
+    <span class ="itemprice"></span>
+    </div>
+
+    <div  class="q" style="display: none;" >
+  
+            <label for="qty">Qty:</label>
+        <input class="qty" onchange="getVal(event)" type="number" value="1"  style = "width: 50px;">
+    </div>
+    
+    <div>
+    <p id="date" style="font-size: 10px ;"> </p>
+    </div>
+    <div id="del" class="del" >
+    <i  class = "fa fa-trash" style="color:red; display: none; " ></i>
+    </div>  
+    </div>     
+
+     
+     </li>
+        </ul>
+ 
+          </div>
+          <div id="total" style=" display: none; background-color: blue; color: white; width: fit-content; border-radius: 3px; padding:4px; margin: 0 auto;"><p>Total: ₦ <span id="bal" ></span> </p> </div>
+          <br>
+<p id="shippingfee" style=" display: none; background-color: blue; color: white; width: fit-content; border-radius: 3px; padding:4px; margin: 0 auto;">Shipping Fee: ₦ <span id="fee"></span> </p>
+<br>
+
+<p id="subtotal" style=" display: none; background-color: green; color: white; width: fit-content; border-radius: 3px; padding:4px; margin: 0 auto;">Sub-Total: ₦ <span id="balance" ></span></p>
+<br><br>
+<div style=" display: none;" id="btn">
+    <a href="checkout.html">    <button style="width:100% ;" class="btn btn-danger">Poceed To Checkout</button></a>
+    <br><br>
+<input class="text-center"  style=" width: 100%;" type="text" placeholder="Enter coupon code.">
+<br><br>
+
+ <button class="btn btn-secondary" style="width: 100%;  background-color: green; color: white; border-radius: 5px; padding:4px;">Apply Coupon</button>
+
+</div>
+    </div>
+
+    
+
+
+
+    <div class="details">
+
+    <div class="support">
+       <i class="fa fa-headphones"></i>
+       <h5>Support 24/7</h5>
+       <p>Your satisfaction is our priority.</p>
+    </div>
+
+    <div class="delivery">
+        <i class="fa fa-box"></i>
+        <h5>Free Delivery</h5>
+      
+        <p>Free delivery for orders within Lagos and orders above ₦150,000.</p>
+     </div>
+
+
+     <div class="guarantee">
+        <i class="fa fa-check"></i>
+        <h5>100% Guarantee</h5>
+        <p>30days money back guarantee, T&Cs apply.</p>
+     </div>
+ 
+
+     </div>
+ 
+
+
+
+
+
+     <div class="products">
+        <h3>LATEST PRODUCTS</h3>
+
+
+        <div class="grid-container">
+            <div class="grid-images">
+                <div class="discounted grid grid-img1">
+                <img src="AGOGO/PATEK (2).jpg" width="100px" height="100px" alt="">
+                <div class="caption">
+                   <p class="d"> <small>MEN</small></p>
+                   <i class="fa fa-heart-o"  onclick="addToWishlist(event)"></i>
+                   <h5>-7%</h5>
+                    <p class="name">PATEK PHILIPPE</p>
+                    <p class="price"><strong> ₦57,600.00 - <br> ₦70,000.00 </strong></p>
+
+                    <h4>SELECT <br><br> OPTIONS</h4>
+                </div>
+            </div>
+
+          
+            <div class=" grid grid-img2">
+                <img src="AGOGO/VERSACE a (4).jpg" width="100px" height="100px" alt="">
+                <div class="caption">
+                   <p> <small>MEN</small></p>
+                   <i class="fa fa-heart-o"  onclick="addToWishlist(event)"></i>
+    
+                    <p  class="name">VERSACE</p>
+                    <p class="price"><strong> ₦34,000.00 - <br> ₦35,000.00 </strong></p>
+                    <h4>SELECT <br><br> OPTIONS</h4>
+                </div>
+            </div>
+
+
+
+            <div class="discounted grid grid-img3">
+                <img src="AGOGO/TOMMY (2).jpg" width="100px" height="100px" alt="">
+                <div class="caption">
+                   <p class="d"> <small>MEN</small></p>
+                   <i class="fa fa-heart-o"  onclick="addToWishlist(event)"></i>
+                    <h5>-0%</h5>
+                    <p  class="name">FRANCK MEN WATCH</p>
+                    <p ><del> ₦58,000.00</del><strong class="price"> <br> ₦57,800.00 </strong></p>
+                    <h4>SELECT <br><br> OPTIONS</h4>
+                </div>
+            </div>
+
+
+            
+
+            <div class="discounted grid grid-img4">
+                <img src="AGOGO/GUCCI (1).jpg" width="100px" height="100px" alt="">
+                <div class="caption " >
+                   <p class="d"> <small>MEN</small></p>
+                   <h5>-3%</h5>
+                   <i class="fa fa-heart-o" style="position: relative; left: 55px; top: -147px;"  onclick="addToWishlist(event)"></i>
+                   <p  ><del> ₦45,000.00  </del><br> <strong class="price">₦43,550.00 </strong></p>
+                    <p  class="name">GUCCI</p>
+              
+                    <h4>SELECT <br><br> OPTIONS</h4>
+                </div>
+            </div>
+
+
+
+            <div class=" grid grid-img5">
+                <img src="AGOGO/BVL GARI (3).jpg" width="100px" height="100px" alt="">
+                <div class="caption">
+                   <p> <small>MEN</small></p>
+                   <i class="fa fa-heart-o"  onclick="addToWishlist(event)"></i>
+    
+                    <p  class="name">CITIZEN MEN WATCH</p>
+                    <p class="price"><strong> ₦35,000.00 </strong> </p>
+                    <h4>SELECT <br><br> OPTIONS</h4>
+                </div>
+            </div>
+
+            <div class=" grid grid-img6">
+                <img src="AGOGO/BVL GARI (3).jpg" width="100px" height="100px" alt="">
+                <div class="caption">
+                   <p> <small>MEN</small></p>
+                   <i class="fa fa-heart-o"  onclick="addToWishlist(event)"></i>
+    
+                    <p  class="name">BVL GARI</p>
+                    <p class="price"><strong> ₦35,000.00 </strong> </p>
+                    <h4>SELECT <br><br> OPTIONS</h4>
+                </div>
+            </div>
+
+            <div class=" grid grid-img7">
+                <img src="AGOGO/GC (2).png" width="100px" height="100px" alt="">
+                <div class="caption">
+                   <p> <small>MEN</small></p>
+                   <i class="fa fa-heart-o"  onclick="addToWishlist(event)"></i>
+    
+                    <p  class="name">GC LUXURY WATCH</p>
+                    <p class="price"><strong> ₦45,000.00 </strong> </p>
+                    <h4>SELECT <br><br> OPTIONS</h4>
+                </div>
+            </div>
+
+            <div class=" grid grid-img8">
+                <img src="AGOGO/VERSACE (3).png" width="100px" height="100px" alt="">
+                <div class="caption">
+                   <p> <small>MEN</small></p>
+                   <i class="fa fa-heart-o"  onclick="addToWishlist(event)"></i>
+    
+                    <p  class="name">VERSACE</p>
+                    <p class="price"><strong> ₦45,000.00 </strong> </p>
+                    <h4>SELECT <br><br> OPTIONS</h4>
+                </div>
+            </div>
+
+            <div class=" grid grid-img9">
+                <img src="AGOGO/CARTLER (6).jpg" width="100px" height="100px" alt="">
+                <div class="caption">
+                   <p> <small>MEN</small></p>
+                   <i class="fa fa-heart-o"  onclick="addToWishlist(event)"></i>
+    
+                    <p  class="name">CARTIER</p>
+                    <p class="price"><strong> ₦15,000.00 </strong> </p>
+                    <h4>SELECT <br><br> OPTIONS</h4>
+                </div>
+            </div>
+
+            <div class=" grid grid-img10">
+                <img src="AGOGO/LOGNES (1).jpg" width="100px" height="100px" alt="">
+                <div class="caption">
+                   <p> <small>MEN</small></p>
+                   <i class="fa fa-heart-o"  onclick="addToWishlist(event)"></i>
+    
+                    <p  class="name">LONGINES</p>
+                    <p class="price"><strong> ₦45,000.00 - <br> ₦46,000.00 </strong> </p>
+                    <h4>SELECT <br><br> OPTIONS</h4>
+                </div>
+            </div>
+
+
+            <div class=" grid grid-img11">
+                <img src="AGOGO/BVL GARI (1).jpg" width="100px" height="100px" alt="">
+                <div class="caption">
+                   <p> <small>MEN</small></p>
+                   <i class="fa fa-heart-o"  onclick="addToWishlist(event)"></i>
+    
+                    <p  class="name">BVL GARI</p>
+                    <p class="price"><strong> ₦35,000.00 </strong> </p>
+                    <h4>SELECT <br><br> OPTIONS</h4>
+                </div>
+            </div>
+
+            <div class=" grid grid-img12">
+                <img src="AGOGO/FRANCK M b (1).png" width="100px" height="100px" alt="">
+                <div class="caption">
+                   <p> <small>MEN</small></p>
+                   <i  onclick="addToWishlist(event)" class="fa fa-heart-o"></i>
+     
+                    <p  class="name" >FRANCK MULLER</p>
+                    <p class="price"><strong> ₦35,000.00 </strong> </p>
+                    <h4>SELECT <br><br> OPTIONS</h4>
+                </div>
+            </div>
+    
+            </div>
+    
+    
+    
+        </div>
+
+     
+
+    
+
+
+     <br>
+
+
+        <h3>FEATURED PRODUCTS</h3>
+
+
+
+ <div class="images fp">
+
+        <div class="grid-images">
+
+        <div id="items" class=" grid2 grid-img13">
+        <img src="AGOGO/VACHERON (1).jpg" width="100px" height="100px" alt="">
+        <div class="caption">
+         <small>MEN</small>
+           <i class="fa fa-heart-o" onclick="addToWishlist(event)"></i>
+           <p><del> ₦75000.00  </del></p>
+           <p class="price"><strong>₦74350.00 </strong></p>
+           <h5>-1%</h5>
+            <p  class="name">VACHERON</p>
+            <p onclick = "showCart()" style="position: relative; top: 5px; color: blue; font-weight: bold;">View Cart</p>
+            <h4 style="position: relative; top: -18px;" onclick="addToCart(0)" >ADD TO CART</h4>
+         
+            </div>
+            </div>
+
+            <div class="grid2 grid-img14">
+            <img src="AGOGO/ROLEX L.png" width="100px" height="100px" alt="">
+            <div class="caption">
+               <small>MEN</small>
+               <i class="fa fa-heart-o"   onclick="addToWishlist(event)"></i>
+               <p><del> ₦85000.00  </del> </p>
+               <p class="price"> <strong>₦83595.00 </strong></p>
+               <h5>-2%</h5>
+                <p  class="name">ROLEX</p>
+                <p onclick = "showCart()" style="position: relative; top: 5px; color: blue; font-weight: bold;">View Cart</p>
+                <h4 style="position: relative; top: -18px;" onclick="addToCart(1)">ADD TO CART</h4>
+
+                
+                </div>
+
+
+        </div>
+
+        <div class="grid2 grid-img15">
+            <img src="AGOGO/HERMES (2).png" width="100px" height="100px" alt="">
+            <div class="caption">
+               <small>MEN</small>
+               <i class="fa fa-heart-o"  onclick="addToWishlist(event)"></i> 
+               <p><del> ₦45000.00  </del> </p>
+               <p class="price"><strong>₦39790.00 </strong></p>
+               <h5>-12%</h5>
+                <p  class="name">HERMES</p>
+                <p onclick = "showCart()" style="position: relative; top: 5px; color: blue; font-weight: bold;">View Cart</p>
+                <h4 style="position: relative; top: -18px;" onclick="addToCart(2)" >ADD TO CART</h4>
+                
+                </div>
+
+
+        </div>
+
+
+        
+        <div class="grid2 grid-img16">
+            <img src="AGOGO/HERMES L (2).jpg" width="100px" height="100px" alt="">
+            <div class="caption">
+              <small>MEN</small>
+               <i class="fa fa-heart-o"  onclick="addToWishlist(event)"></i>
+               <p></p>
+               <p class="price"> <strong>₦50000.00 </strong></p>
+     
+            
+                <h5>-0%</h5>
+                <p  class="name">HERMES</p>
+             
+                <p onclick = "showCart()" style="position: relative; top: 32px; color: blue; font-weight: bold;">View Cart</p>
+                <h4 style="position: relative; top: 8px;"  onclick="addToCart(3)" >ADD TO CART</h4>
+               
+                
+                </div>
+
+
+        </div>
+
+        
+        <div class="grid2 grid-img17">
+            <img src="AGOGO/GUCCI (6).jpg" width="100px" height="100px" alt="">
+            <div class="caption">
+              <small>MEN</small>
+               <i class="fa fa-heart-o"  onclick="addToWishlist(event)"></i>
+               <p><del> ₦45000.00  </del> </p>
+               <p class="price"> <strong>₦43550.00 </strong></p>
+               <h5  style="position:relative; top: 3px;">-3%</h5>
+                <p  class="name">GUCCI</p>
+                <p onclick = "showCart()" style="position: relative; top: 15px; color: blue; font-weight: bold;">View Cart</p>
+                <h4 style="position: relative; top: -7px;" onclick="addToCart(4)" >ADD TO CART</h4>
+
+                
+                </div>
+
+
+        </div>
+
+        
+        <div class="grid2 grid-img18">
+            <img src="AGOGO/GUCCI (4).jpg" width="100px" height="100px" alt="">
+            <div class="caption">
+              <small>MEN</small>
+               <i class="fa fa-heart-o"  onclick="addToWishlist(event)"></i>
+               <p><del> ₦45000.00  </del></p>
+               <p class="price"><strong>₦43550.00 </strong></p>
+               <h5  style="position:relative; top: 3px;">-3%</h5>
+                <p  class="name">GUCCI</p>
+                <p onclick = "showCart()" style="position: relative; top: 15px; color: blue; font-weight: bold;">View Cart</p>
+                <h4 style="position: relative; top: -7px;"  onclick="addToCart(5)" >ADD TO CART</h4>
+        
+                
+                </div>
+
+
+
+
+        </div>
+
+                        
+        <div class="grid2 grid-img19">
+            <img src="AGOGO/FRANCK M b (2).png" width="100px" height="100px" alt="">
+            <div class="caption">
+               <small>MEN</small>
+               <i class="fa fa-heart-o"  onclick="addToWishlist(event)"></i>
+               <h5  style="position:relative; top: 7px;">-0%</h5>
+               <p class="price"><strong>₦35000.00 </strong></p>
+          
+                    <p></p>
+            
+                <p  class="name">FRANCK MULLER</p>
+                <p onclick = "showCart()" style="position: relative; top: 22px; color: blue; font-weight: bold;">View Cart</p>
+                <h4 style="position: relative; top: -1px;" onclick="addToCart(6)" >ADD TO CART</h4>
+
+                </div>
+
+
+        </div>
+
+
+                        
+        <div class="grid2 grid-img20">
+            <img src="AGOGO/FRANCK M (1).png" width="100px" height="100px" alt="">
+            <div class="caption">
+              <small>MEN</small>
+               <i class="fa fa-heart-o"  onclick="addToWishlist(event)"></i>
+         
+                <h5 style="position:relative; top: 7px;">-0%</h5>
+                <p class="price"><strong>₦35000.00 </strong></p>
+                <p></p>
+                <p  class="name">FRANCK MULLER</p>
+                <p onclick = "showCart()" style="position: relative; top: 22px; color: blue; font-weight: bold;">View Cart</p>
+                <h4 style="position: relative; top: -1px;" onclick="addToCart(7)" >ADD TO CART</h4>
+                </div>
+
+
+        </div>
+
+
+                
+        <div class="grid2 grid-img21">
+            <img src="AGOGO/TOMMY (2).jpg" width="100px" height="100px" alt="">
+            <div class="caption">
+              <small>MEN</small>
+               <i class="fa fa-heart-o"  onclick="addToWishlist(event)"></i>
+               <p><del> ₦58000.00  </del></p>
+               <p class="price"><strong>₦57800.00 </strong></p>
+               <h5 style="position:relative; top: -30px;">-0%</h5>
+                <p  class="name" style="font-size:smaller ;" >FRANCK MEN WATCH</p>
+                <p onclick = "showCart()" style="position: relative; top: 10px; color: blue; font-weight: bold;">View Cart</p>
+                <h4 style="position: relative; top: -13px;" onclick="addToCart(8) " >ADD TO CART</h4>
+            
+                </div>
+                </div>
+
+
+
+        
+                <div class="grid2 grid-img22">
+                    <img src="AGOGO/BVL GARI (1).jpg" width="100px" height="100px" alt="">
+                    <div class="caption">
+                       <small>MEN</small>
+                       <i class="fa fa-heart-o"  onclick="addToWishlist(event)"></i>
+                     
+                            <h5  style="position:relative; top: 18px;">-0%</h5>
+                            <p class="price"> <strong>₦43550.00 </strong></p>
+                            <p></p>
+                        <p  class="name">BVL GARI</p>
+                     
+                        <p onclick = "showCart()" style="position: relative; top: 22px; color: blue; font-weight: bold;">View Cart</p>
+                        <h4 style="position: relative; top: -1px;" onclick="addToCart(9)" >ADD TO CART</h4>
+                       
+</div>
+                        </div>
+
+
+                                
+        <div class="grid2 grid-img23">
+            <img src="AGOGO/AP.png" width="100px" height="100px" alt="">
+            <div class="caption">
+             <small>MEN</small>
+               <i class="fa fa-heart-o"  onclick="addToWishlist(event)"></i>
+               <p><del> ₦65000.00  </del></p>
+               <p class="price"> <strong>₦58000.00 </strong></p>
+               <h5  style="position:relative; top: -21px;">-11%</h5>
+       
+                <p  class="name" style="margin-left: 17px; font-size: smaller; margin-bottom: 18px;">AUDEMARS <br> PIGUET</p>
+                <p onclick = "showCart()" style="position: relative; top: -10px; color: blue; font-weight: bold;">View Cart</p>
+                <h4  onclick="addToCart(10)" style="position: relative; top: -32px;">ADD TO CART</h4>
+              
+                </div>
+
+
+
+
+        </div>
+
+                
+        <div class="grid2 grid-img24">
+            <img src="AGOGO/AP (2).jpg" width="100px" height="100px" alt="">
+            <div class="caption">
+              <small>MEN</small>
+               <i class="fa fa-heart-o"  onclick="addToWishlist(event)"></i>
+               <p><del> ₦58000.00  </del></p>
+               <p class="price"><strong>₦57800.00 </strong></p>
+               <h5  style="position:relative; top: -23px;">-0%</h5>
+         
+                <p  class="name" style="margin-left: 15px; font-size: smaller; margin-bottom: 18px;">AUDEMARS <br> PEUGET</p>
+            <p onclick = "showCart()" style="position: relative; top: -10px; color: blue; font-weight: bold;">View Cart</p>
+                <h4  onclick="addToCart(11)" style ="position: relative; top: -32px;" >ADD TO CART</h4>
+              
+          
+                </div>
+
+        
+
+
+        </div>
+
+
+        
+        </div>
+
+
+ </div>
+        
+        
+   
+
+<br>
+ 
+ 
+<h3>FAST SELLING</h3>
+
+
+<div class="fs">
+
+    <div class= "item r">
+        <div class="bluebg">
+        <h4>Rolex</h4>
+        <p>Gold/Silver/Bronze</p>
+
+    </div>
+    <div class="text-center " style="margin-top: 15px;">
+        <img src="AGOGO/ROLEX C (1).png" width="100px"  height="100px" alt="">
+        
+        <p  style="font-size: 15px;"> <strong>₦290,000.00 </strong></p>
+        <p style=" font-size: 8px;">You save <span> ₦6,500</span></p>
+        <button><i class = "fa fa-shopping-cart"></i> <em> SHOP NOW</em></button>
+        <br><br>
+       <p  style="font-size: 7px; color: dodgerblue;"> <i class="fa fa-clock"></i> NEXT DAY DELIVERY</p>
+
+      
+
+    </div>
+    </div>
+
+    <div class="item v">
+
+        <div class="bluebg">
+        <h4>Versace</h4>
+        <p>Gold/Silver/Bronze</p>
+
+    </div>
+
+    <div class="text-center" style="margin-top: 15px;">
+        <img src="AGOGO/VERSACE L (4).png" width="100px"  height="100px" alt="">
+        
+        <p  style="font-size: 15px;"> <strong>₦8,500.00 </strong></p>
+        <p style=" font-size: 8px;">You save <span> ₦1,250</span></p>
+        <button><i class = "fa fa-shopping-cart"></i> <em> SHOP NOW</em></button>
+        <br><br>
+       <p  style="font-size: 7px; color: dodgerblue;"> <i class="fa fa-clock"></i> NEXT DAY DELIVERY</p>
+
+      
+    </div>
+
+    </div>
+
+    <div class="item h " style="margin-bottom: 10px;">
+
+        <div class="bluebg">
+        <h4>Hublot Watch</h4>
+        <p>Series 5mm - 44mm</p>
+
+    </div>
+
+    <div class="text-center" style="margin-top: 15px;">
+        <img src="AGOGO/HUBLOT.png" width="100px"  height="100px" alt="">
+        
+        <p style="font-size: 15px;"> <strong>₦50,000.00 </strong></p>
+        <p style=" font-size: 8px;">You save <span> ₦8,200</span></p>
+        <button><i class = "fa fa-shopping-cart"></i> <em> SHOP NOW</em></button>
+        <br><br>
+       <p  style="font-size: 7px; color: dodgerblue;"> <i class="fa fa-clock"></i> NEXT DAY DELIVERY</p>
+
+    </div>
+
+
+    </div>
+
+
+
+<div  class="sub text-center mb-6">
+    <h3 style="color: black; margin-bottom: 30px; margin-left: 10px;" >
+        Get the latest deals
+    </h3>
+    <p style="color: black;"><em> Subscribe to our newsletter</em></p>
+
+    <form class=""form-group action="">
+        <label for="mail">Your mail</label>
+   <input class="input-group" style="margin-left: 10px; margin-bottom: 5px;" type="email" >
+    </form>
+
+    <button class ="btn btn-primary">Submit</button>
+</div>
+
+
+<div class="sm text-center mb-5">
+    <h4>
+        Follow us on social media.
+    </h4>
+
+    <small>
+        Follow us on social media to get notified of our new products on daily basis.
+    </small>
+
+    <br>
+
+ <a href=""> <i class="fa fa-facebook mr-6"></i></a>  
+   <a href=""><i class="fa fa-instagram mr-6"></i></a> 
+   <a href=""> <i class="fa fa-twitter mr-6"></i> </a>
+<a href=""> <i class="fa fa-linkedin mr-6"></i></a>
+<a href=""> <i class="fa fa-whatsapp"></i></a>
+
+
+
+</div>
+
+</div>
+
+
+<div class="cs  text-center">
+    <p>CART</p>
+    <P>No products in the cart.</p>
+
+        <div class="df df1">
+            <input id = "search" type="text" placeholder="Search..." oninput="filterInput()">
+            <i class="fa fa-search"></i>
+         
+        
+        </div>
+</div>
+
+     </div>
+</div>
+
+
+<div class="wishlist" style="display: none;">
+    
+     <span onclick =  '{document.querySelector(".wishlist").style.display = "none"
+    }'>&times;</span>
+    <h4 class="text-center"> My Wishlist</h4>
+
+    <div id="fav" style="margin-left: 10px; display: grid; grid-template-columns: auto auto auto;">
+
+    </div>
+ </div>
+
+
+ 
+
+<footer>
+    <div class="sp">
+        <h5>SUPPORT</h5>
+        <ul class="list-group">
+            <li class="list-group-item"  style="background-color: grey">Privacy Policy</li>
+            <li class="list-group-item"  style="background-color: grey">About Us</li>
+            <li class="list-group-item"  style="background-color: grey">Contact Us</li>
+            <li class="list-group-item"  style="background-color: grey">Terms & Conditions</li>
+        </ul>
+
+
+
+
+        <h5>PRODUCTS</h5>
+        <ul class="list-group ">
+            
+            <li class="list-group-item df"  style="background-color: grey"><img src="AGOGO/agogongr_1622776191184_0.jpg" alt="" width="50px">
+                <p>FRANCK MEN WATCH <br>    
+                    
+              <p> <del> ₦58,000.00  </del> <strong>₦57,800.00 </strong></p>
+                </p>
+        
+
+        </li>
+
+
+        <li class="list-group-item df"  style="background-color: grey"><img src="AGOGO/AP.png" alt="" width="50px">
+            <p>AUDEMARS PIGUET <br>
+                
+           <p><del> ₦58,000.00  </del><strong>₦57,800.00 </strong></p>
+
+        </p>
+    </li>
+
+    <li class="list-group-item df"  style="background-color: grey"><img src="AGOGO/GUCCI (4).jpg" alt="" width="50px">
+        <p>GUCCI <br>
+            
+       <p><del> ₦45,000.00  </del><strong>₦43,550.00 </strong></p>
+
+    </p>
+</li>
+
+<li class="list-group-item df"  style="background-color: grey"><img src="AGOGO/GUCCI (6).jpg" alt="" width="50px">
+    <p>GUCCI<br>
+        
+   <p><del> ₦58,000.00  </del><strong>₦43,550.00 </strong></p>
+
+</p>
+</li>
+        </ul>
+    </h5>
+
+
+    </div>
+
+    <div class="pages">
+
+        <h5>PAGES</h5>
+        <ul class="list-group">
+
+            <li  class="list-group-item" style="background-color: grey"> <a href="index.html">HOME</a></li>
+ 
+                <li  class="list-group-item"  style="background-color: grey"> <a href="#">SHOP</a> </li>
+          
+            
+    
+  
+            <li class="list-group-item"  style="background-color: grey"><a href="about.html">ABOUT US</a></li>
+
+            <li  class="list-group-item"  style="background-color: grey"><a href="contact.html">CONTACT US</a></li>
+  
+            <li  class="list-group-item"  style="background-color: grey"><a href="#" onclick = "showWishlist()">WISHLIST</a></li>
+           
+            
+           
+        
+            <li  class="list-group-item"  style="background-color: grey" ><a href="#">FAQS</a>  </li>
+  
+        
+        
+        </ul>
+    </div>
+
+
+    <div class="copyright text-center">
+       <p> Developed by Aishat Akinyemi.</p>
+        <p>Copyright &copy; 2022. </p>
+    </div>
+</footer>
+
+
+
+</body>
+</html>

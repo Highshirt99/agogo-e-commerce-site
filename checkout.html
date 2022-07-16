@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/ebb1ffe809.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="script.js"></script>
+
+    <title>Checkout</title>
+
+    </head>
+
+    <body>
+        <header>
+
+            <div class="header" style="display: flex; justify-content: space-between; margin-top: 10px;"  >
+    
+        <i  class="fa fa-bars" onclick = "displayMenu()" id ="bar" style="margin-left: 5px ; color: grey; margin-top: 10px;"></i>
+        <img src="AGOGO/logo.png" width = 60px alt="">
+    
+        <div style="margin-right: 15px ; margin-top: 5px;">
+            
+     <div>
+        <i style="background-color: rgb(29, 48, 106) ; color: white; padding: 4px; font-size: 8px; border-radius: 3px; padding: 4px; " class="fa fa-shopping-basket" onclick="showCart()">   <span style="display:none ;" id="count">0</span></i>
+
+  
+    
+        <i class="fa fa-heart-o"  onclick = "showWishlist()"style="width: 10px; color: grey;"favorite></i>
+    </div>
+    </div>
+    
+    
+    </header>
+    
+    
+    <div id = "menu" class="menu">
+    
+        <div class="menu-content">
+        <span onclick="closeMenu()">&times;</span>
+    <div class="df df1">
+        <input id = "search" type="text" placeholder="Search..." oninput="filterInput()">
+        <i class="fa fa-search"></i>
+     
+    
+    </div>
+    <hr>
+    
+    <div class="menu-items">
+    <ul id="mylist">
+    
+        <li> <a href="index.html">HOME</a></li>
+    <hr>
+    <div class="df"  onclick="{document.getElementById('opt').style.display ='block'}">
+        <li> <a href="#">SHOP</a> </li>
+        <i class = "fa fa-angle-right">
+        </i>
+    </div>
+        <div id="opt" style="display: none; padding: 3px;" >
+            <a  href=""> GUCCI</a>
+          <a href=""> VERSACE</a>
+      <a href=""> HUBLOT</a>
+           <a href=""> FRANCK MULLER</a>
+        <a href=""> BVL GARI</a>
+        </div>
+    
+    <hr>
+        <li><a href="about.html">ABOUT US</a></li>
+    <hr>
+        <li><a href="contact.html" >CONTACT US</a></li>
+        <hr>
+        <li><a href="#" onclick = "showWishlist()">WISHLIST</a></li>
+        <hr>
+        
+       
+    
+        <li><a href="#">FAQS</a>  </li>
+        <hr>
+    
+    
+    </ul>
+    <br>
+    <div class="socials">
+    <i class="fa fa-facebook"></i>
+    <i class="fa fa-instagram"></i>
+    <i class="fa fa-twitter"></i>
+    </div>
+    <hr>
+    
+    </div>
+    </div>
+        </div>
+    
+    
+        <div id="cart" class="cart">
+       
+         <span id="close" onclick="closeCart()">&times;</span>
+         <div class="content2">
+            <h3  >CART</h3>
+    
+    
+            <p id="cartProducts">No products in the cart.</p>
+    
+        </div>
+        </div>
+        </header>
+
+        
+<div style="margin-bottom: 30px; border-bottom: 1px solid grey; padding: 10px;">
+
+      <p style="text-align:center; margin-top: 20px;  font-size: 12px;">You already have a coupon? <span style="color:dodgerblue ;" onclick="{document.getElementById('coupon-con').style.display = 'block'}">Click here to enter coupon code.</span></p>
+     
+     
+      <div style="width: fit-content; margin: 0 auto; border: 1px black dashed; display: none; padding: 30px;" id="coupon-con">
+<p style="margin-top:-30px; font-size: 12px; ">Apply your coupon below.</p>
+        <input  style="width:250px ; border:1px solid grey ;  font-size: 12px;" type="number" placeholder="Coupon code.">
+        <br><br>
+<button style="width:250px ;  font-size: 8px; font-style: italic;" class="btn btn-primary">APPLY COUPON</button>
+        </div>
+
+    </div>
+
+    <div style="margin-left:20px ; font-size: smaller;">
+<h5>BILLING DETAILS</h5>
+
+<form class="form-group"  action="">
+<label for="fname">First Name</label>
+<input style="border: 1px solid grey;" class="input-group" type="text" required>
+<br>
+<label for="lname">Last Name</label>
+<input style="border: 1px solid grey;" class="input-group" type="text" required>
+<br>
+<label style="width:100% ;" for="cname">Company Name(optional)</label>
+<input style="border: 1px solid grey;" class="input-group" type="text">
+<br>
+
+<label for="region">Country/Region</label>
+<input style="border: 1px solid grey;" class="input-group" type="text" required>
+<br>
+<label for="address">Street Address</label>
+<input style="border: 1px solid grey; width: 250px ;" class="input-group" type="text" placeholder="House number and street name." required>
+<br>
+<input style="border: 1px solid grey; width: 250px ;" class="input-group" type="text" placeholder="Apartment, suite, unit etc.(optional)." >
+<br>
+<label for="town">Town/City</label>
+<input style="border: 1px solid grey; width:250px;" class="input-group" type="text" required>
+<br>
+
+<label for="state">State</label>
+<input style="border: 1px solid grey; width:250px " class="input-group" type="text" required>
+<br>
+
+<label for="phone">Phone</label>
+<input style="border: 1px solid grey; width:250px;" class="input-group" type="number" required>
+
+<br>
+<label for="email">Email</label>
+<input style="border: 1px solid grey; width:250px " class="input-group" type="email" required>
+<br>
+<p for="notes">Order notes(optional)</p>
+<textarea name="" id="" cols="50" rows="5">Notes about your order e.g special note for delivery.</textarea>
+</form>
+
+<input type="checkbox">
+<label for="">Create an account.</label>
+<br>
+<input id="ship" type="checkbox" >
+<label for="">Ship to a different address?</label>
+</div>        
+
+
+ </div>
+
+
+</div>
+
+
+
+
+
+<div class="con" style=" border: 1px solid black; padding: 15px; margin: 20px; font-size: smaller;">
+    <h5>
+        PAYMENT METHOD
+    </h5>
+
+    <form action="" >
+        <div  id="cash">
+<input type="radio" name="cash" onchange="display(event)">
+<label for="">Cash on delivery</label>
+
+</div>
+<br>
+<p id="msg" ></p>
+
+<div id="spec">
+<input type="radio" name="cash"  onchange="display(event)">
+<label for="">Pay With Specta</label>
+
+</div>
+<br><br>
+
+<input type="checkbox">
+<label style="font-size:10px ;" for="">I have read and agreed to the website's terms and conditions.</label>
+
+    </form>
+<button class="btn btn-primary">
+    PLACE ORDER
+</button>
+<br><br>
+<p>Your personal data will be used to process your order. Support your experience throughout this website, and for other purposes described in our privacy policy.
+</p>
+</div>
+
+
+<div class="wishlist" style="display: none;">
+    
+     <span onclick =  '{document.querySelector(".wishlist").style.display = "none"
+    }'>&times;</span>
+    <h4 class="text-center"> My Wishlist</h4>
+
+    <div id="fav" style="margin-left: 10px; display: grid; grid-template-columns: auto auto auto;">
+
+    </div>
+ </div>
+
+
+
+ 
+    <footer>
+        <div class="sp">
+            <h5>SUPPORT</h5>
+            <ul class="list-group">
+                <li class="list-group-item"  style="background-color: grey">Privacy Policy</li>
+                <li class="list-group-item"  style="background-color: grey">About Us</li>
+                <li class="list-group-item"  style="background-color: grey">Contact Us</li>
+                <li class="list-group-item"  style="background-color: grey">Terms & Conditions</li>
+            </ul>
+    
+    
+    
+    
+            <h5>PRODUCTS</h5>
+            <ul class="list-group ">
+                
+                <li class="list-group-item df"  style="background-color: grey"><img src="AGOGO/agogongr_1622776191184_0.jpg" alt="" width="50px">
+                    <p>FRANCK MEN WATCH <br>    
+                        
+                  <p> <del> ₦58,000.00  </del> <strong>₦57,800.00 </strong></p>
+                    </p>
+            
+    
+            </li>
+    
+    
+            <li class="list-group-item df"  style="background-color: grey"><img src="AGOGO/AP.png" alt="" width="50px">
+                <p>AUDEMARS PIGUET <br>
+                    
+               <p><del> ₦58,000.00  </del><strong>₦57,800.00 </strong></p>
+    
+            </p>
+        </li>
+    
+        <li class="list-group-item df"  style="background-color: grey"><img src="AGOGO/GUCCI (4).jpg" alt="" width="50px">
+            <p>GUCCI <br>
+                
+           <p><del> ₦45,000.00  </del><strong>₦43,550.00 </strong></p>
+    
+        </p>
+    </li>
+    
+    <li class="list-group-item df"  style="background-color: grey"><img src="AGOGO/GUCCI (6).jpg" alt="" width="50px">
+        <p>GUCCI<br>
+            
+       <p><del> ₦58,000.00  </del><strong>₦43,550.00 </strong></p>
+    
+    </p>
+    </li>
+            </ul>
+        </h5>
+    
+    
+        </div>
+    
+        <div class="pages">
+    
+            <h5>PAGES</h5>
+            <ul class="list-group">
+    
+                <li  class="list-group-item" style="background-color: grey"> <a href="index.html">HOME</a></li>
+     
+                    <li  class="list-group-item"  style="background-color: grey"> <a href="#">SHOP</a> </li>
+              
+                
+        
+      
+                <li class="list-group-item"  style="background-color: grey"><a href="about.html">ABOUT US</a></li>
+    
+                <li  class="list-group-item"  style="background-color: grey"><a href="contact.html">CONTACT US</a></li>
+      
+                <li  class="list-group-item"  style="background-color: grey"><a href="#" onclick = "showWishlist()">WISHLIST</a></li>
+               
+                
+               
+            
+                <li  class="list-group-item"  style="background-color: grey" ><a href="#">FAQS</a>  </li>
+      
+            
+            
+            </ul>
+        </div>
+    
+    
+        <div class="copyright text-center">
+           <p> Developed by Aishat Akinyemi.</p>
+            <p>Copyright &copy; 2022. </p>
+        </div>
+    </footer>
+    
+
+    </body>
+
+
+    </html>
