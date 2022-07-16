@@ -296,32 +296,13 @@ function UpdateTotal2(e){
 }
 
 
-// let favs = document.querySelectorAll(".fa-heart-o")
-// favs.forEach((fav) => {
-// fav.onclick = addToWishlist()
-
-
-// })
-
-// function addToWishlist(){
-//   favs.forEach((fav) => {
-//   fav.style.color = "blue";
-//   })
-//   addToCart();
-
-  
-
-// }
-
-
-
 
 function addToWishlist(event){
 let fav = event.target.parentNode.parentNode
 if(event.target.classList.contains("fa-heart-o")){
 event.target.classList.remove("fa-heart-o")
 event.target.classList.add("fa-heart")
-}
+
 let itemImg = fav.getElementsByTagName("img")[0].src
 
 let itemName = fav.getElementsByClassName("name")[0].innerText
@@ -330,6 +311,7 @@ let itemPrice = fav.getElementsByClassName("price")[0].innerText
 
 
 let favorite = document.getElementById("fav")
+
 favorite.innerHTML += `
 
 <div>
@@ -339,6 +321,7 @@ favorite.innerHTML += `
 <i style = "color: red" class = "fa fa-trash" onclick = "deleteFav(event)"> </i>
 </div>
 `
+}
 }
 
 function showWishlist(){
