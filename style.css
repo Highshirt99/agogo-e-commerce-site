@@ -51,7 +51,7 @@ font-style: italic ;
 }
 .container .caption{
  
-    position: absolute;
+    position: relative;
     left: 40px;
     top: 50%;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -564,7 +564,7 @@ border-radius: 10px 10px 0 0;
     left: 60px;
 }
 .cs input{
-    margin-left: 80px;
+    margin-left: 120px;
 }
 .cs input::placeholder{
 font-size: 8px;
