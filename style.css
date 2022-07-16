@@ -40,15 +40,16 @@ header{
   text-align: center;
 
  }
-.container .caption p{
-font-size: 12px;
-font-style: italic ;
+.container .caption{
+ 
+    position: relative;
+    left: 0;
+    top: -200px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 
 
+ } 
 
-
-
-}
 .container .caption{
  
     position: relative;
@@ -556,23 +557,6 @@ border-radius: 10px 10px 0 0;
 .cs p{
     font-size: x-small;
     color: lightgray;
-}
-
-.cs .df1{
-    width: 200px;
-    position: relative;
-    left: 60px;
-}
-.cs input{
-    
-   margin-left: 200px;
-}
-.cs input::placeholder{
-font-size: 8px;
-}
-.cs .fa-search{
-    position: relative;
-    right: -15px;
 }
 
 .wishlist{
